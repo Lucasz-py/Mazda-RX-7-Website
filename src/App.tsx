@@ -134,7 +134,7 @@ const App: React.FC = () => {
         <div className="app">
             <div className="container">
                 <header className="header">
-                    <h1 className="title">Personalizador de Auto 3D</h1>
+                    <h1 className="title">Personalizador de Auto</h1>
                     <p className="subtitle">Mazda RX-7 FD3S - Stinger Prototype</p>
                 </header>
 

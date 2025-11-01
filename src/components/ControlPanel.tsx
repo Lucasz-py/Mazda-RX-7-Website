@@ -47,12 +47,6 @@ export const ControlPanel: React.FC<ControlPanelProps> = ({
                 selectedColor={primaryColor}
             />
 
-            <HoodSelector
-                options={hoodOptions}
-                selectedOption={hoodOption}
-                onOptionSelect={onHoodOptionChange}
-            />
-
             <ColorPanel
                 title="✨ Pintura Secundaria"
                 colors={colors}
@@ -60,10 +54,18 @@ export const ControlPanel: React.FC<ControlPanelProps> = ({
                 selectedColor={secondaryColor}
             />
 
+            {/* --- Rines movido aquí --- */}
             <RimsPanel
                 colors={colors}
                 onColorSelect={onRimsColorChange}
                 selectedColor={rimsColor}
+            />
+
+            {/* --- Capó movido al final --- */}
+            <HoodSelector
+                options={hoodOptions}
+                selectedOption={hoodOption}
+                onOptionSelect={onHoodOptionChange}
             />
 
             <button onClick={onReset} className="reset-button">
