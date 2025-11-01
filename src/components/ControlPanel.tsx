@@ -1,14 +1,21 @@
 import React from 'react';
-import { Color } from '../types';
+import { Color, HoodOption } from '../types';
 import { ColorPanel } from './ColorPanel';
+import { HoodSelector } from './HoodSelector';
+import { RimsPanel } from './RimsPanel';
 import './ControlPanel.css';
 
 interface ControlPanelProps {
     colors: Color[];
+    hoodOptions: HoodOption[];
     primaryColor: string | null;
     secondaryColor: string | null;
+    rimsColor: string | null;
+    hoodOption: 'original' | 'black';
     onPrimaryColorChange: (color: Color) => void;
     onSecondaryColorChange: (color: Color) => void;
+    onRimsColorChange: (color: Color) => void;
+    onHoodOptionChange: (option: HoodOption) => void;
     onReset: () => void;
     onTestMaterial?: (materialName: string, color: string) => void;
     availableMaterials?: string[];
@@ -17,14 +24,19 @@ interface ControlPanelProps {
 
 export const ControlPanel: React.FC<ControlPanelProps> = ({
     colors,
+    hoodOptions,
     primaryColor,
     secondaryColor,
+    rimsColor,
+    hoodOption,
     onPrimaryColorChange,
     onSecondaryColorChange,
+    onRimsColorChange,
+    onHoodOptionChange,
     onReset,
     onTestMaterial,
     availableMaterials = [],
-    showDebug = true
+    showDebug = false
 }) => {
     return (
         <div className="control-panel">
@@ -35,6 +47,12 @@ export const ControlPanel: React.FC<ControlPanelProps> = ({
                 selectedColor={primaryColor}
             />
 
+            <HoodSelector
+                options={hoodOptions}
+                selectedOption={hoodOption}
+                onOptionSelect={onHoodOptionChange}
+            />
+
             <ColorPanel
                 title="✨ Pintura Secundaria"
                 colors={colors}
@@ -42,11 +60,16 @@ export const ControlPanel: React.FC<ControlPanelProps> = ({
                 selectedColor={secondaryColor}
             />
 
+            <RimsPanel
+                colors={colors}
+                onColorSelect={onRimsColorChange}
+                selectedColor={rimsColor}
+            />
+
             <button onClick={onReset} className="reset-button">
                 🔄 Restaurar Colores Originales
             </button>
 
-            {/* Sección de prueba de materiales - Solo si hay materiales disponibles */}
             {showDebug && onTestMaterial && availableMaterials.length > 0 && (
                 <div className="test-materials-section">
                     <h3 className="test-title">🔬 Prueba de Materiales (Debug)</h3>
@@ -77,8 +100,10 @@ export const ControlPanel: React.FC<ControlPanelProps> = ({
             <div className="info-box">
                 <h3 className="info-title">ℹ️ Información</h3>
                 <ul className="info-list">
-                    <li>• <strong>Pintura Principal:</strong> Carrocería completa (body + capó)</li>
+                    <li>• <strong>Pintura Principal:</strong> Carrocería completa</li>
+                    <li>• <strong>Capó:</strong> Original (sigue pintura principal) o Negro</li>
                     <li>• <strong>Pintura Secundaria:</strong> Kit aerodinámico y detalles</li>
+                    <li>• <strong>Rines:</strong> Color personalizado de las llantas</li>
                     <li>• Archivo actual: <strong>auto5.glb</strong></li>
                 </ul>
             </div>
