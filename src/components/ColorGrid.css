@@ -1,0 +1,12 @@
+.color-grid-compact {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+@media (max-width: 768px) {
+    .color-grid-compact {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+}

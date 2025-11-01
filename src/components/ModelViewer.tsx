@@ -38,7 +38,6 @@ export const ModelViewer: React.FC<ModelViewerProps> = ({
                     `Material ${i}: ${m.name}`
                 ));
 
-                // Llamar al callback con los nombres de materiales
                 onModelLoad(modelViewer, materialNames);
             }
         };
@@ -62,35 +61,24 @@ export const ModelViewer: React.FC<ModelViewerProps> = ({
     }, [onModelLoad]);
 
     return (
-        <div className="model-viewer-container">
-            <div className="model-viewer-wrapper">
-                <model-viewer
-                    ref={modelViewerRef}
-                    src="/auto5.glb"
-                    alt="Mazda RX-7 FD3S"
-                    auto-rotate
-                    camera-controls
-                    shadow-intensity="1"
-                    exposure="1"
-                    className="model-viewer"
-                >
-                    <div slot="progress-bar" style={{ display: 'none' }}></div>
-                </model-viewer>
+        <div className="model-viewer-clean">
+            <model-viewer
+                ref={modelViewerRef}
+                src="/auto5.glb"
+                alt="Mazda RX-7 FD3S"
+                auto-rotate
+                camera-controls
+                shadow-intensity="1"
+                exposure="1"
+            >
+                <div slot="progress-bar" style={{ display: 'none' }}></div>
+            </model-viewer>
 
-                {showWarning && !isModelLoaded && (
-                    <div className="warning-message">
-                        <p>
-                            ⚠️ Asegúrate de que el archivo <strong>auto5.glb</strong> esté en la carpeta <strong>public/</strong>
-                        </p>
-                    </div>
-                )}
-            </div>
-
-            <div className="controls-info">
-                <span>🖱️ Arrastra para rotar</span>
-                <span>🔍 Rueda para zoom</span>
-                <span>⚪ Click derecho para mover</span>
-            </div>
+            {showWarning && !isModelLoaded && (
+                <div className="warning-overlay">
+                    <p>⚠️ Asegúrate de que <strong>auto5.glb</strong> esté en la carpeta <strong>public/</strong></p>
+                </div>
+            )}
         </div>
     );
 };

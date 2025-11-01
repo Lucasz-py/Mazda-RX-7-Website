@@ -1,0 +1,14 @@
+.main-header {
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    background: #000;
+    border-bottom: 3px solid #1f2937;
+}
+
+.header-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}

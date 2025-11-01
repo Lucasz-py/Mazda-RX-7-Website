@@ -1,0 +1,28 @@
+.hood-options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.hood-option-button {
+    padding: 14px;
+    border: 2px solid #d1d5db;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    text-transform: uppercase;
+}
+
+.hood-option-button:hover {
+    border-color: #000;
+    background: #f9fafb;
+}
+
+.hood-option-button.selected {
+    border-color: #000;
+    background: #111827;
+    color: white;
+}

@@ -1,0 +1,27 @@
+.main-footer {
+    width: 100%;
+    padding: 20px;
+    background: #111827;
+    border-top: 3px solid #1f2937;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-text {
+    margin: 0;
+    font-size: 14px;
+    color: #9ca3af;
+}
+
+.footer-link {
+    color: #3b82f6;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    color: #60a5fa;
+    text-decoration: underline;
+}
