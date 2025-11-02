@@ -5,6 +5,7 @@ import { ModelViewer } from './components/ModelViewer';
 import { CustomizationPanel } from './components/CustomizationPanel';
 import { Color, HoodOption } from './types';
 import { COLORS, HOOD_OPTIONS, MATERIAL_CONFIG } from './config/materials';
+import { ModelViewerElement } from './types/model-viewer';
 import './App.css';
 
 const App: React.FC = () => {
@@ -14,9 +15,9 @@ const App: React.FC = () => {
     const [hoodOption, setHoodOption] = useState<'original' | 'black'>('original');
     const [isModelLoaded, setIsModelLoaded] = useState(false);
     const [availableMaterials, setAvailableMaterials] = useState<string[]>([]);
-    const modelViewerInstanceRef = useRef<any>(null);
+    const modelViewerInstanceRef = useRef<ModelViewerElement | null>(null);
 
-    const handleModelLoad = useCallback((modelViewer: any, materials: string[]) => {
+    const handleModelLoad = useCallback((modelViewer: ModelViewerElement, materials: string[]) => {
         setIsModelLoaded(true);
         setAvailableMaterials(materials);
         modelViewerInstanceRef.current = modelViewer;
@@ -30,7 +31,7 @@ const App: React.FC = () => {
         const materials = modelViewer.model.materials;
 
         materialNames.forEach(targetName => {
-            const material = materials.find((m: any) => m.name === targetName);
+            const material = materials.find((m) => m.name === targetName);
             if (material) {
                 try {
                     material.pbrMetallicRoughness.setBaseColorFactor(color);
@@ -81,7 +82,7 @@ const App: React.FC = () => {
 
         if (modelViewer?.model && availableMaterials.length > 0) {
             availableMaterials.forEach(materialName => {
-                const material = modelViewer.model.materials.find((m: any) => m.name === materialName);
+                const material = modelViewer.model!.materials.find((m) => m.name === materialName);
                 if (material) {
                     try {
                         material.pbrMetallicRoughness.setBaseColorFactor('#ffffff');
@@ -99,7 +100,6 @@ const App: React.FC = () => {
 
             <main className="main-content">
                 <div className="viewer-container">
-                    {/* Aquí ya no está la imagen del marco */}
                     <ModelViewer
                         onModelLoad={handleModelLoad}
                         isModelLoaded={isModelLoaded}
@@ -128,4 +128,4 @@ const App: React.FC = () => {
     );
 };
 
-export default App; 
+export default App;
