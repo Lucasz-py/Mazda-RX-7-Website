@@ -99,6 +99,7 @@ const App: React.FC = () => {
 
             <main className="main-content">
                 <div className="viewer-container">
+                    {/* Aquí ya no está la imagen del marco */}
                     <ModelViewer
                         onModelLoad={handleModelLoad}
                         isModelLoaded={isModelLoaded}
@@ -127,4 +128,4 @@ const App: React.FC = () => {
     );
 };
 
-export default App;
+export default App; 
