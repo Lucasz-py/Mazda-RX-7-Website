@@ -4,10 +4,14 @@
     margin-bottom: 12px;
 }
 
-/* Cuando tiene imagen, removemos el borde */
+/* * CORRECCIÓN 1: Fondo transparente para el contenedor
+ * principal de la sección con imagen (evita el borde blanco).
+ */
 .collapsible-section.has-image {
     border: none;
     margin-bottom: 12px;
+    background: transparent;
+    /* <-- AÑADIDO */
 }
 
 .collapsible-header {
@@ -22,7 +26,9 @@
     transition: background 0.2s ease;
 }
 
-/* Cuando tiene imagen, removemos el padding */
+/* * CORRECCIÓN 1 (bis): Fondo transparente para el botón
+ * (ya estaba en tu archivo original).
+ */
 .has-image .collapsible-header {
     padding: 0;
     background: transparent;
@@ -69,6 +75,9 @@
     transform: scale(1.01);
 }
 
+/* * CORRECCIÓN 2: El contenedor de contenido 
+ * SÓLO maneja la altura para la animación.
+ */
 .collapsible-content {
     max-height: 0;
     overflow: hidden;
@@ -77,13 +86,23 @@
 
 .collapsible-content.open {
     max-height: 500px;
+    /* Se quitan padding, border-top y background de aquí */
+}
+
+/* * CORRECCIÓN 2 (bis): El wrapper interno
+ * maneja todo el estilo (padding, fondo, borde).
+ * Esto es para el componente CollapsibleSection.tsx modificado.
+ */
+.collapsible-content-inner {
     padding: 20px;
     border-top: 2px solid #e5e7eb;
     background: white;
 }
 
-/* Fondo azul marino para secciones con imagen */
-.has-image .collapsible-content.open {
+/* * CORRECCIÓN 2 (ter): Estilo del wrapper interno
+ * para las secciones con imagen.
+ */
+.has-image .collapsible-content-inner {
     border-top: 2px solid #1e3a5f;
     background: #2c3e50;
 }

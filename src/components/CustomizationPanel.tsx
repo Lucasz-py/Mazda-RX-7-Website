@@ -88,8 +88,13 @@ export const CustomizationPanel: React.FC<CustomizationPanelProps> = ({
                 </CollapsibleSection>
             </div>
 
+            {/* BOTÓN RESTAURAR CON IMAGEN */}
             <button onClick={onReset} className="reset-button-new">
-                RESTAURAR
+                <img
+                    src="/rest.png"
+                    alt="Restaurar"
+                    className="reset-button-image"
+                />
             </button>
         </div>
     );

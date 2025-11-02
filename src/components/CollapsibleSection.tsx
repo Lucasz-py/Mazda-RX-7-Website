@@ -41,7 +41,10 @@ export const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({
                 )}
             </button>
             <div className={`collapsible-content ${open ? 'open' : ''}`}>
-                {children}
+                {/* ESTE ES EL CAMBIO: Añadimos el wrapper interno */}
+                <div className="collapsible-content-inner">
+                    {children}
+                </div>
             </div>
         </div>
     );

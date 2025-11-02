@@ -31,28 +31,52 @@
     background: #60a5fa;
 }
 
+/* --- ESTILOS PARA EL BOTÓN DE RESTAURAR --- */
+
+/* * El botón ahora es un contenedor transparente para la imagen.
+ * Se eliminaron: background, color, border, font-size, text-transform, etc.
+ * Se mantuvieron: width, margin-top, cursor.
+ */
 .reset-button-new {
     width: 100%;
-    padding: 16px;
+    padding: 0;
+    /* Quitar padding */
     margin-top: 20px;
-    background: #1e40af;
-    color: white;
-    border: 2px solid #60a5fa;
-    font-size: 16px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    background: transparent;
+    /* Quitar fondo */
+    border: none;
+    /* Quitar borde */
     cursor: pointer;
+
+    /* Quitar estilos de texto (por si acaso) */
+    font-size: 0;
+    line-height: 0;
+}
+
+/* * Nueva regla para la imagen dentro del botón.
+ * 'display: block' asegura que no tenga espacios extra.
+ */
+.reset-button-image {
+    width: 100%;
+    height: auto;
+    display: block;
     transition: all 0.2s ease;
+    /* Transición para hover/active */
 }
 
-.reset-button-new:hover {
-    background: #1e3a8a;
-    border-color: #93c5fd;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(96, 165, 250, 0.4);
+/* * Reemplaza el :hover anterior.
+ * Ahora aplica el efecto a la imagen.
+ */
+.reset-button-new:hover .reset-button-image {
+    opacity: 0.9;
+    transform: scale(1.01);
+    /* Efecto sutil al pasar el mouse */
 }
 
-.reset-button-new:active {
-    transform: translateY(0);
+/* * Reemplaza el :active anterior.
+ * Ahora aplica el efecto a la imagen.
+ */
+.reset-button-new:active .reset-button-image {
+    transform: scale(0.99);
+    /* Efecto de clic */
 }

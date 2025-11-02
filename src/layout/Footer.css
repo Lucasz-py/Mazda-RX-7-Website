@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap');
+
 .main-footer {
     width: 100%;
     padding: 20px;
@@ -6,12 +8,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Pixelify Sans', sans-serif;
 }
 
 .footer-text {
     margin: 0;
     font-size: 14px;
     color: #9ca3af;
+    font-family: 'Pixelify Sans', sans-serif;
 }
 
 .footer-link {
@@ -19,6 +23,7 @@
     font-weight: 700;
     text-decoration: none;
     transition: color 0.2s ease;
+    font-family: 'Pixelify Sans', sans-serif;
 }
 
 .footer-link:hover {
