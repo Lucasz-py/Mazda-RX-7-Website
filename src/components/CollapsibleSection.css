@@ -4,6 +4,12 @@
     margin-bottom: 12px;
 }
 
+/* Cuando tiene imagen, removemos el borde */
+.collapsible-section.has-image {
+    border: none;
+    margin-bottom: 12px;
+}
+
 .collapsible-header {
     width: 100%;
     padding: 16px 20px;
@@ -16,8 +22,19 @@
     transition: background 0.2s ease;
 }
 
+/* Cuando tiene imagen, removemos el padding */
+.has-image .collapsible-header {
+    padding: 0;
+    background: transparent;
+}
+
 .collapsible-header:hover {
     background: #f9fafb;
+}
+
+/* Prevenir hover cuando hay imagen */
+.has-image .collapsible-header:hover {
+    background: transparent;
 }
 
 .collapsible-title {
@@ -39,6 +56,19 @@
     transform: rotate(180deg);
 }
 
+/* Imagen ocupa todo el espacio del botón */
+.collapsible-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.collapsible-image:hover {
+    opacity: 0.9;
+    transform: scale(1.01);
+}
+
 .collapsible-content {
     max-height: 0;
     overflow: hidden;
@@ -49,4 +79,11 @@
     max-height: 500px;
     padding: 20px;
     border-top: 2px solid #e5e7eb;
+    background: white;
+}
+
+/* Fondo azul marino para secciones con imagen */
+.has-image .collapsible-content.open {
+    border-top: 2px solid #1e3a5f;
+    background: #2c3e50;
 }

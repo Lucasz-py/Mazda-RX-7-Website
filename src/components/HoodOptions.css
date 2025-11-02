@@ -6,7 +6,7 @@
 
 .hood-option-button {
     padding: 14px;
-    border: 2px solid #d1d5db;
+    border: 2px solid #4a5568;
     background: white;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -17,12 +17,12 @@
 }
 
 .hood-option-button:hover {
-    border-color: #000;
+    border-color: #60a5fa;
     background: #f9fafb;
 }
 
 .hood-option-button.selected {
-    border-color: #000;
-    background: #111827;
+    border-color: #60a5fa;
+    background: #1e40af;
     color: white;
 }

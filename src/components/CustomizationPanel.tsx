@@ -35,7 +35,12 @@ export const CustomizationPanel: React.FC<CustomizationPanelProps> = ({
     return (
         <div className="customization-panel">
             <div className="customization-scroll">
-                <CollapsibleSection title="COLOR PRINCIPAL">
+                {/* Color Principal */}
+                <CollapsibleSection
+                    title="COLOR PRINCIPAL"
+                    imageClosed="/colorPrincipalBannerDown.png"
+                    imageOpen="/colorPrincipalBannerUp.png"
+                >
                     <ColorGrid
                         colors={colors}
                         onColorSelect={onPrimaryColorChange}
@@ -43,7 +48,12 @@ export const CustomizationPanel: React.FC<CustomizationPanelProps> = ({
                     />
                 </CollapsibleSection>
 
-                <CollapsibleSection title="COLOR SECUNDARIO">
+                {/* Color Secundario */}
+                <CollapsibleSection
+                    title="COLOR SECUNDARIO"
+                    imageClosed="/csDown.png"
+                    imageOpen="/csUp.png"
+                >
                     <ColorGrid
                         colors={colors}
                         onColorSelect={onSecondaryColorChange}
@@ -51,7 +61,12 @@ export const CustomizationPanel: React.FC<CustomizationPanelProps> = ({
                     />
                 </CollapsibleSection>
 
-                <CollapsibleSection title="COLOR RINES">
+                {/* Color Rines */}
+                <CollapsibleSection
+                    title="COLOR RINES"
+                    imageClosed="/crDown.png"
+                    imageOpen="/crUp.png"
+                >
                     <ColorGrid
                         colors={colors}
                         onColorSelect={onRimsColorChange}
@@ -59,7 +74,12 @@ export const CustomizationPanel: React.FC<CustomizationPanelProps> = ({
                     />
                 </CollapsibleSection>
 
-                <CollapsibleSection title="COLOR CAPO">
+                {/* Color Capó */}
+                <CollapsibleSection
+                    title="COLOR CAPO"
+                    imageClosed="/ccDown.png"
+                    imageOpen="/ccUp.png"
+                >
                     <HoodOptions
                         options={hoodOptions}
                         selectedOption={hoodOption}

@@ -2,7 +2,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    background: #f3f4f6;
+    background: #1a1a2e;
     padding: 20px;
 }
 
@@ -18,26 +18,26 @@
 }
 
 .customization-scroll::-webkit-scrollbar-track {
-    background: #e5e7eb;
+    background: #2c3e50;
     border-radius: 4px;
 }
 
 .customization-scroll::-webkit-scrollbar-thumb {
-    background: #9ca3af;
+    background: #4a5568;
     border-radius: 4px;
 }
 
 .customization-scroll::-webkit-scrollbar-thumb:hover {
-    background: #6b7280;
+    background: #60a5fa;
 }
 
 .reset-button-new {
     width: 100%;
     padding: 16px;
     margin-top: 20px;
-    background: #111827;
+    background: #1e40af;
     color: white;
-    border: 2px solid #000;
+    border: 2px solid #60a5fa;
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
@@ -47,9 +47,10 @@
 }
 
 .reset-button-new:hover {
-    background: #000;
+    background: #1e3a8a;
+    border-color: #93c5fd;
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(96, 165, 250, 0.4);
 }
 
 .reset-button-new:active {
