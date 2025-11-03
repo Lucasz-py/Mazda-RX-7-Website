@@ -22,12 +22,10 @@ export const ColorGrid: React.FC<ColorGridProps> = ({
     };
 
     const handleColorChange = (newHex: string) => {
-        onColorSelect({ name: 'Custom', hex: newHex });
+        onColorSelect({ name: 'Custom', hex: newHex, image: '/lapiz.png' }); // Añadimos 'image'
     };
 
     return (
-        // --- INICIO DE LA MODIFICACIÓN ---
-        // 1. Añadimos un <div> padre para envolver la grilla Y el picker
         <div>
             <div className="color-grid-compact">
                 {colors.map((color) => (
@@ -39,17 +37,22 @@ export const ColorGrid: React.FC<ColorGridProps> = ({
                     />
                 ))}
 
+                {/* --- INICIO DEL CAMBIO --- */}
                 <button
                     className="custom-color-button"
                     onClick={handlePencilClick}
                     title="Seleccionar color personalizado"
                 >
-                    ✏️
+                    {/* Reemplazamos el emoji por la imagen */}
+                    <img
+                        src="/lapiz.png"
+                        alt="Personalizar"
+                        className="color-button-image"
+                    />
                 </button>
+                {/* --- FIN DEL CAMBIO --- */}
             </div>
 
-            {/* 2. El picker ahora se renderiza *debajo* de la grilla,
-                   dentro del <div> padre */}
             {showPicker && (
                 <CustomColorPicker
                     color={selectedColor || '#ffffff'}
@@ -57,6 +60,5 @@ export const ColorGrid: React.FC<ColorGridProps> = ({
                 />
             )}
         </div>
-        // --- FIN DE LA MODIFICACIÓN ---
     );
 };

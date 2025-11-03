@@ -2,24 +2,42 @@
     width: 50px;
     height: 50px;
     border-radius: 8px;
-    border: 2px solid #d1d5db;
+    /* Mantenemos esto para el 'glow' de selección */
     cursor: pointer;
     transition: all 0.2s ease;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+    /* --- INICIO DEL CAMBIO --- */
+    padding: 0;
+    background-color: transparent;
+    /* Borde transparente para que no haya saltos al seleccionar */
+    border: 2px solid transparent;
+    /* --- FIN DEL CAMBIO --- */
 }
 
-.color-button:hover {
+/* --- NUEVA REGLA --- */
+/* Estilo para la imagen dentro del botón */
+.color-button-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: all 0.2s ease;
+}
+
+/* --- ESTILOS MODIFICADOS --- */
+.color-button:hover .color-button-image {
     transform: scale(1.1);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    border-color: #fff;
 }
 
 .color-button.selected {
+    /* El borde de selección ahora se aplica al botón contenedor */
     border-color: #60a5fa;
     box-shadow: 0 4px 12px rgba(96, 165, 250, 0.6);
+}
+
+.color-button.selected .color-button-image {
     transform: scale(1.1);
 }
 
-.color-button:active {
+.color-button:active .color-button-image {
     transform: scale(1.05);
 }

@@ -17,9 +17,15 @@ export const ColorButton: React.FC<ColorButtonProps> = ({
         <button
             onClick={onClick}
             className={`color-button ${isSelected ? 'selected' : ''}`}
-            style={{ backgroundColor: color.hex }}
             title={color.name}
-            aria-label={`Seleccionar color ${color.name}`}
-        />
+        >
+            {/* --- INICIO DEL CAMBIO --- */}
+            <img
+                src={color.image}
+                alt={color.name}
+                className="color-button-image"
+            />
+            {/* --- FIN DEL CAMBIO --- */}
+        </button>
     );
 };

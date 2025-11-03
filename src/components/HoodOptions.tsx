@@ -20,8 +20,14 @@ export const HoodOptions: React.FC<HoodOptionsProps> = ({
                     key={option.value}
                     onClick={() => onOptionSelect(option)}
                     className={`hood-option-button ${selectedOption === option.value ? 'selected' : ''}`}
+                    title={option.name}
                 >
-                    <span className="hood-option-label">{option.name}</span>
+                    {/* Se reemplazó el <span> por <img> */}
+                    <img
+                        src={option.image}
+                        alt={option.name}
+                        className="hood-option-image"
+                    />
                 </button>
             ))}
         </div>
