@@ -7,7 +7,7 @@ export const COLORS: Color[] = [
     { name: 'Blanco', hex: '#ffffff' },
     { name: 'Amarillo', hex: '#ffdd00' },
     { name: 'Verde', hex: '#00ff00' },
-    { name: 'Naranja', hex: '#ff6600' },
+    //{ name: 'Naranja', hex: '#ff6600' },
     { name: 'Morado', hex: '#9900ff' },
 ];
 

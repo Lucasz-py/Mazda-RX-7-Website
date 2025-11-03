@@ -1,0 +1,37 @@
+/* Contenedor del Pop-up */
+.color-picker-popup {
+    margin-top: 16px;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* --- INICIO DE LA MODIFICACIÓN --- */
+    background: #2c3e50;
+    /* Fondo oscuro (del panel) */
+    border: 2px solid #4a5568;
+    /* Borde (de la scrollbar) */
+    /* --- FIN DE LA MODIFICACIÓN --- */
+
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos de la librería react-colorful */
+.react-colorful {
+    width: 250px;
+    height: 250px;
+}
+
+.react-colorful__saturation {
+    border-radius: 8px 8px 0 0;
+}
+
+.react-colorful__hue {
+    height: 20px;
+    border-radius: 0 0 8px 8px;
+}
+
+.react-colorful__pointer {
+    width: 20px;
+    height: 20px;
+}
