@@ -5,16 +5,24 @@
 
     /* --- INICIO DE LA MODIFICACIÓN --- */
 
-    /* Se elimina 'background: white;' */
+    /* 1. Define la imagen de fondo */
+    background-image: url('/backauto.png');
 
-    /* Gradiente radial (gris claro en el piso, gris medio en los bordes) */
-    background: radial-gradient(circle at 50% 80%, #707070, #505050);
+    /* 2. Asegura que la imagen cubra todo el contenedor */
+    background-size: cover;
+
+    /* 3. Centra la imagen */
+    background-position: center;
+
+    /* 4. Evita que la imagen se repita */
+    background-repeat: no-repeat;
+
+    /* --- FIN DE LA MODIFICACIÓN --- */
 
     /* Mantenemos el borde y el redondeo */
-    border: 10px solid #9aacb6;
+    border: 10px solid #AAAAAA;
     border-radius: 12px;
     overflow: hidden;
-    /* --- FIN DE LA MODIFICACIÓN --- */
 }
 
 .model-viewer-clean model-viewer {

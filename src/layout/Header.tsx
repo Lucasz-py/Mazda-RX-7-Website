@@ -15,6 +15,13 @@ export const Header: React.FC = () => {
                 {/* Fallback para navegadores que no soportan video */}
                 <img src="/encabezado.gif" alt="Header" className="header-media" />
             </video>
+
+            {/* Imagen del título encima del video */}
+            <img
+                src="/titulo.png"
+                alt="Título"
+                className="header-title"
+            />
         </header>
     );
 };
